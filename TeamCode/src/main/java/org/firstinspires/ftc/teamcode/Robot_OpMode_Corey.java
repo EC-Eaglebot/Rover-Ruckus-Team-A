@@ -52,14 +52,12 @@ import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="My Cool OpMode that is Autonomous :)", group="Robot")
 //@Disabled
-public class Robot_OpMode_Autonomous extends LinearOpMode {
+public class Robot_OpMode_Corey extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor frontrightDrive = null;
-    private DcMotor frontleftDrive = null;
-    private DcMotor backrightDrive = null;
-    private DcMotor backleft_Drive = null;
+    private DcMotor leftDrive = null;
+    private DcMotor rightDrive = null;
 
     @Override
     public void runOpMode() {
@@ -93,6 +91,8 @@ public class Robot_OpMode_Autonomous extends LinearOpMode {
 
             // POV Mode uses left stick to go forward, and right stick to turn.
             // - This uses basic math to combine motions and is easier to drive straight.
+            double drive = -gamepad1.left_stick_y;
+            double turn  =  gamepad1.right_stick_x;
             leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
             rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
 
