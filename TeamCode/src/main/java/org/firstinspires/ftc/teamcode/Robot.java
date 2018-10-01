@@ -82,4 +82,15 @@ public class Robot
         leftClaw.setPosition(MID_SERVO);
         rightClaw.setPosition(MID_SERVO);
     }
+
+    void move_straight(int speed) {
+        rightfrontDrive.setPower(speed);
+        leftfrontDrive.setPower(speed);
+        leftbackDrive.setPower(speed);
+        leftbackDrive.setPower(speed);
+    }
+
+    void stop(){
+        move_straight(0);
+    }
 }
