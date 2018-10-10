@@ -53,7 +53,7 @@ import com.qualcomm.robotcore.hardware.Servo;
  */
 
 @TeleOp(name="My Cool OpMode that is Autonomous :)", group="Robot")
-//@Disabled
+@Disabled
 public class Robot_OpMode_Autonomous extends LinearOpMode {
 
     Robot my_cool_robot = new Robot();
@@ -109,7 +109,7 @@ public class Robot_OpMode_Autonomous extends LinearOpMode {
 
         // Show the elapsed game time and wheel power.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
-        telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
+       // telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
         telemetry.update();
 
     }
