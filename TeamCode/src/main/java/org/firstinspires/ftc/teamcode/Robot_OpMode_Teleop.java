@@ -61,7 +61,8 @@ public class Robot_OpMode_Teleop extends OpMode {
      */
     @Override
     public void loop() {
-       double fRight = gamepad1.left_stick_y + gamepad1.right_stick_x + gamepad1.left_stick_x;
+/* Old code
+   double fRight = gamepad1.left_stick_y + gamepad1.right_stick_x + gamepad1.left_stick_x;
       double  bRight = gamepad1.left_stick_y + gamepad1.right_stick_x - gamepad1.left_stick_x;
       double fLeft = gamepad1.left_stick_y - gamepad1.right_stick_x - gamepad1.left_stick_x;
       double bLeft = gamepad1.left_stick_y - gamepad1.right_stick_x + gamepad1.left_stick_x;
@@ -71,23 +72,14 @@ public class Robot_OpMode_Teleop extends OpMode {
         robot.rightfrontDrive.setPower(fRight);
         robot.leftbackDrive.setPower(bLeft);
         robot.rightbackDrive.setPower(bRight);
-        // Use gamepad left & right Bumpers to open and close the claw
-        /*
-        if (gamepad1.right_bumper)
-            clawOffset += CLAW_SPEED;
-        else if (gamepad1.left_bumper)
-            clawOffset -= CLAW_SPEED;
+      */
+    double right = gamepad1.left_stick_y - gamepad1.left_stick_x;
+    double left = gamepad1.left_stick_y;
 
-        // Move both servos to new position.  Assume servos are mirror image of each other.
-        clawOffset = Range.clip(clawOffset, -0.5, 0.5);
-        robot.leftClaw.setPosition(robot.MID_SERVO + clawOffset);
-        robot.rightClaw.setPosition(robot.MID_SERVO - clawOffset);
-
-        // Send telemetry message to signify robot running;
-        telemetry.addData("claw",  "Offset = %.2f", clawOffset);
-        telemetry.addData("left",  "%.2f", left);
-        telemetry.addData("right", "%.2f", right);
-        */
+    robot.leftfrontDrive.setPower(left);
+    robot.leftbackDrive.setPower(left);
+    robot.rightfrontDrive.setPower(right);
+    robot.rightbackDrive.setPower(right);
     }
 
     /*
