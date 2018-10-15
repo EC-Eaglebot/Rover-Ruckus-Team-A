@@ -73,7 +73,7 @@ public class Robot_OpMode_Teleop extends OpMode {
         robot.leftbackDrive.setPower(bLeft);
         robot.rightbackDrive.setPower(bRight);
       */
-    double right = gamepad1.left_stick_y - gamepad1.left_stick_x + (0.1 * gamepad1.left_stick_y);
+    double right = gamepad1.left_stick_y - gamepad1.left_stick_x;
     double left = gamepad1.left_stick_y + (0.1 * gamepad1.left_stick_x);
     double front = gamepad1.right_stick_x;
     double back = -front;
