@@ -69,15 +69,63 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-        while (runtime.seconds() < 1) {
-            robot.move_straight(1);
+           runtime.reset();
+        while (runtime.seconds() < 0.4) {
+            robot.move_straight(0.5);
         }
         runtime.reset();
-
-        while (runtime.seconds() < 1) {
-            robot.turnLeft(1);
+        while (runtime.seconds() < 0.5) {
+            robot.turnLeft(0.4);
         }
 
+        runtime.reset();
+        while (runtime.seconds() < 0.7) {
+            robot.move_straight(1);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 1) {
+            robot.turnRight(0.4);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 2.3) {
+            robot.move_straight(0.5);
+        }
+
+        runtime.reset();
+
+        /* while(runtime.seconds() < 5) {
+        robot.turnRight(1);
+    } */
+
+        /*
+        runtime.reset();
+        while (runtime.seconds() < 1) {
+            robot.move_straight(1);
+            }
+
+        runtime.reset();
+        while(runtime.seconds() < 0.5) {
+            robot.turnRight(1);
+            }
+
+       runtime.reset();
+        while (runtime.seconds() < 0.5) {
+            robot.move_straight(1);
+            }
+
+        runtime.reset();
+        while (runtime.seconds() < 1) {
+            robot.turnLeft(1);
+            }
+
+        runtime.reset();
+        while (runtime.seconds() < 1.5) {
+            robot.move_straight(1);
+            }
+
+         */
     }
 }
 

@@ -62,7 +62,7 @@ public class Robot_OpMode_Teleop extends OpMode {
     @Override
     public void loop() {
 // Old code - but what happens if we just try it.
-      double fRight = gamepad1.left_stick_y + gamepad1.right_stick_x + gamepad1.left_stick_x;
+    /*  double fRight = gamepad1.left_stick_y + gamepad1.right_stick_x + gamepad1.left_stick_x;
       double  bRight = gamepad1.left_stick_y + gamepad1.right_stick_x - gamepad1.left_stick_x;
       double fLeft = gamepad1.left_stick_y - gamepad1.right_stick_x - gamepad1.left_stick_x;
       double bLeft = gamepad1.left_stick_y - gamepad1.right_stick_x + gamepad1.left_stick_x;
@@ -72,9 +72,9 @@ public class Robot_OpMode_Teleop extends OpMode {
         robot.rightfrontDrive.setPower(fRight);
         robot.leftbackDrive.setPower(bLeft);
         robot.rightbackDrive.setPower(bRight);
-
+*/
 //New Code
-/*
+
     double right = gamepad1.left_stick_y - gamepad1.left_stick_x;
     double left = gamepad1.left_stick_y + (0.1 * gamepad1.left_stick_x);
     double front = gamepad1.right_stick_x;
@@ -85,9 +85,9 @@ public class Robot_OpMode_Teleop extends OpMode {
         if ((gamepad1.left_stick_x < 0.1 && gamepad1.left_stick_x > -0.1) && (gamepad1.left_stick_y < 0.1 && gamepad1.left_stick_y > -0.1) ) {
 
             robot.leftfrontDrive.setPower(front);
-      robot.leftbackDrive.setPower(back);
-      robot.rightbackDrive.setPower(-back);
-      robot.rightfrontDrive.setPower(-front);
+            robot.leftbackDrive.setPower(back);
+            robot.rightbackDrive.setPower(-back);
+            robot.rightfrontDrive.setPower(-front);
   }
   else {
             robot.leftfrontDrive.setPower(left);
@@ -95,7 +95,6 @@ public class Robot_OpMode_Teleop extends OpMode {
             robot.rightfrontDrive.setPower(right);
             robot.rightbackDrive.setPower(right);
         }
-*/
     }
 
     /*

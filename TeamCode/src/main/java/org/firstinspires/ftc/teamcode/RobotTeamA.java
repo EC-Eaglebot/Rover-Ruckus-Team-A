@@ -88,34 +88,34 @@ public class RobotTeamA
         rightfrontDrive.setPower(speed);
         leftfrontDrive.setPower(speed);
         leftbackDrive.setPower(speed);
-        leftbackDrive.setPower(speed);
+        rightbackDrive.setPower(speed);
     }
 
     void strafeLeft (double speed) {
         rightfrontDrive.setPower(-speed);
         rightbackDrive.setPower(speed);
         leftfrontDrive.setPower(speed);
-        leftfrontDrive.setPower(-speed);
+        leftbackDrive.setPower(-speed);
     }
 
     void strafeRight (double speed) {
         rightfrontDrive.setPower(speed);
         rightbackDrive.setPower(-speed);
         leftfrontDrive.setPower(-speed);
-        leftfrontDrive.setPower(speed);
+        leftbackDrive.setPower(speed);
     }
 
     void turnRight (double speed) {
-       leftfrontDrive.setPower(speed);
-       leftbackDrive.setPower(speed);
-       rightbackDrive.setPower(-speed);
-       rightfrontDrive.setPower(-speed);
+       leftfrontDrive.setPower(-speed);
+       leftbackDrive.setPower(-speed);
+       rightbackDrive.setPower(speed);
+       rightfrontDrive.setPower(speed);
         }
     void turnLeft (double speed) {
-        leftfrontDrive.setPower(-speed);
-        leftbackDrive.setPower(-speed);
-        rightbackDrive.setPower(speed);
-        rightfrontDrive.setPower(speed);
+        leftfrontDrive.setPower(speed);
+        leftbackDrive.setPower(speed);
+        rightbackDrive.setPower(-speed);
+        rightfrontDrive.setPower(-speed);
     }
 
 
