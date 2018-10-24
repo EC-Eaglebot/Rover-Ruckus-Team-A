@@ -68,12 +68,16 @@ public class Robot
         // Set all motors to zero power
         leftfrontDrive.setPower(0);
         rightfrontDrive.setPower(0);
+        leftbackDrive.setPower(0);
+        rightbackDrive.setPower(0);
         leftArm.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        leftbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rightbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
@@ -88,6 +92,16 @@ public class Robot
         leftfrontDrive.setPower(speed);
         leftbackDrive.setPower(speed);
         leftbackDrive.setPower(speed);
+    }
+    
+    // this function should be replaced by an encoder-enabled equivalent eventually
+    void turn_by_degree(int direction, double seconds_to_turn) {
+        ElapsedTime runtime = new ElapsedTime();
+        runtime.reset();
+        while (runtime.seconds() < seconds_to_turn)
+        {
+            // set the appropriate motors to speed during the loop
+        }
     }
 
     void stop(){
