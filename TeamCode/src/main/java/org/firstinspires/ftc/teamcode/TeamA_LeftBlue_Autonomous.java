@@ -30,10 +30,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
@@ -50,8 +47,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Team A Right Autonomous", group="Robot")
-public class TeamA_RightBlue_Autonomous extends LinearOpMode {
+@Autonomous(name="Team A Left Autonomous", group="Robot")
+public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
     RobotTeamA robot = new RobotTeamA();
 
@@ -75,7 +72,7 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
         }
         runtime.reset();
         while (runtime.seconds() < 0.5) {
-            robot.turnRight(0.4);
+            robot.turnLeft(0.4);
         }
 
         runtime.reset();
@@ -85,7 +82,7 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
 
         runtime.reset();
         while (runtime.seconds() < 1) {
-            robot.turnLeft(0.4);
+            robot.turnRight(0.4);
         }
 
         runtime.reset();
