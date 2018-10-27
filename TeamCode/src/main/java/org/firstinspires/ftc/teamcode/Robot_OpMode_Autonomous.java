@@ -100,13 +100,6 @@ public class Robot_OpMode_Autonomous extends LinearOpMode {
         sleep(500);
         my_cool_robot.stop();
 
-        // POV Mode uses left stick to go forward, and right stick to turn.
-        // - This uses basic math to combine motions and is easier to drive straight.
-        //leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
-        //rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
-
-        // Send calculated power to wheels
-
         // Show the elapsed game time and wheel power.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
        // telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
