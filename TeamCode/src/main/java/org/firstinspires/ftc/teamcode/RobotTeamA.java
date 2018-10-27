@@ -123,9 +123,9 @@ public class RobotTeamA
         runtime.reset();
         while (runtime.seconds() < seconds_to_turn) {
             // set the appropriate motors to speed during the loop
-            rightfrontDrive.setPower(direction * speed);
+            rightfrontDrive.setPower(direction * speed * -1);
             leftfrontDrive.setPower(direction * speed);
-            rightbackDrive.setPower(direction * speed);
+            rightbackDrive.setPower(direction * speed * -1);
             leftbackDrive.setPower(direction * speed);
         }
     }
