@@ -95,12 +95,16 @@ public class Robot
     }
     
     // this function should be replaced by an encoder-enabled equivalent eventually
-    void turn_by_degree(int direction, double seconds_to_turn) {
+    void turn_by_degree(int direction, double speed, double seconds_to_turn) {
         ElapsedTime runtime = new ElapsedTime();
         runtime.reset();
         while (runtime.seconds() < seconds_to_turn)
         {
             // set the appropriate motors to speed during the loop
+            rightfrontDrive.setPower(direction * speed);
+            leftfrontDrive.setPower(direction * speed);
+            rightbackDrive.setPower(direction * speed);
+            leftbackDrive.setPower(direction * speed);
         }
     }
 
