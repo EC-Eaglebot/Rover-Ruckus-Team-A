@@ -58,7 +58,7 @@ public class Robot
         rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
         leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
 
-        armServo = hwMap.get(DcMotor.class,"arm");
+        armServo = hwMap.get(Servo.class,"arm");
 
         leftfrontDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightfrontDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
