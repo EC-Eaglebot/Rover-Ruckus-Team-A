@@ -14,10 +14,8 @@ public class Robot
     public DcMotor  rightfrontDrive  = null;
     public DcMotor  leftbackDrive = null;
     public DcMotor  rightbackDrive = null;
-    public DcMotor  leftArm     = null;
+    public Servo    armServo     = null;
     // The "Servo" Data Types are for the "arm" mechanisms.
-    public Servo    leftClaw    = null;
-    public Servo    rightClaw   = null;
 
     // These are some crazy lines of code coming up. Here's what the following things are:
     // public -> this is a modifier. "public" means that anyone can see it.
@@ -60,7 +58,7 @@ public class Robot
         rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
         leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
 
-        leftArm = hwMap.get(DcMotor.class,"left_arm");
+        armServo = hwMap.get(DcMotor.class,"arm");
 
         leftfrontDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightfrontDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
@@ -70,7 +68,6 @@ public class Robot
         rightfrontDrive.setPower(0);
         leftbackDrive.setPower(0);
         rightbackDrive.setPower(0);
-        leftArm.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
@@ -78,13 +75,10 @@ public class Robot
         rightfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        leftArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        leftClaw  = hwMap.get(Servo.class, "left_hand");
-        rightClaw = hwMap.get(Servo.class, "right_hand");
-        leftClaw.setPosition(MID_SERVO);
-        rightClaw.setPosition(MID_SERVO);
+        armServo  = hwMap.get(Servo.class, "arm");
+        armServo.setPosition(0);
     }
 
     void move_straight(int speed) {
@@ -106,6 +100,14 @@ public class Robot
             rightbackDrive.setPower(direction * speed);
             leftbackDrive.setPower(direction * speed);
         }
+    }
+
+    void shove_the_marker_off(Servo s)
+    {
+        // code to shove the "payload" marker off of the robot.
+        // MAY NOT WORK--requires testing!!
+        s.setPosition(1);
+        s.setPosition(0);
     }
 
     void stop(){
