@@ -15,7 +15,6 @@ public class Robot
     public DcMotor  leftbackDrive = null;
     public DcMotor  rightbackDrive = null;
     public DcMotor liftDrive = null;
-    public DcMotor  leftArm     = null;
     // The "Servo" Data Types are for the "arm" mechanisms.
    // public Servo    leftClaw    = null;
    // public Servo    rightClaw   = null;
@@ -65,7 +64,6 @@ public class Robot
         leftbackDrive = hwMap.get(DcMotor.class, "leftback_drive");
 
         liftDrive = hwMap.get(DcMotor.class, "lift_drive");
-        leftArm = hwMap.get(DcMotor.class, "left_arm");
 
 
         armServo = hwMap.get(Servo.class, "arm");
@@ -79,7 +77,6 @@ public class Robot
         leftbackDrive.setPower(0);
         rightbackDrive.setPower(0);
         liftDrive.setPower(0);
-        leftArm.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
@@ -88,7 +85,7 @@ public class Robot
         leftbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         liftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        leftArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
 
         // Define and initialize ALL installed servos.
         //leftClaw  = hwMap.get(Servo.class, "left_hand");
