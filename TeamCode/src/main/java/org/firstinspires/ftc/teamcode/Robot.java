@@ -14,16 +14,14 @@ public class Robot
     public DcMotor  rightfrontDrive  = null;
     public DcMotor  leftbackDrive = null;
     public DcMotor  rightbackDrive = null;
-<<<<<<< HEAD
     public DcMotor liftDrive = null;
     public DcMotor  leftArm     = null;
     // The "Servo" Data Types are for the "arm" mechanisms.
    // public Servo    leftClaw    = null;
    // public Servo    rightClaw   = null;
-=======
+
     public Servo    armServo     = null;
     // The "Servo" Data Types are for the "arm" mechanisms.
->>>>>>> cb3c32869b3086342681d978e03153eca67c0dac
 
     // These are some crazy lines of code coming up. Here's what the following things are:
     // public -> this is a modifier. "public" means that anyone can see it.
@@ -61,17 +59,16 @@ public class Robot
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        leftfrontDrive  = hwMap.get(DcMotor.class,"leftfront_drive");
-        rightfrontDrive = hwMap.get(DcMotor.class,"rightfront_drive");
-        rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
-        leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
-<<<<<<< HEAD
-        liftDrive = hwMap.get(DcMotor.class,"lift_drive");
-        leftArm = hwMap.get(DcMotor.class,"left_arm");
-=======
+        leftfrontDrive = hwMap.get(DcMotor.class, "leftfront_drive");
+        rightfrontDrive = hwMap.get(DcMotor.class, "rightfront_drive");
+        rightbackDrive = hwMap.get(DcMotor.class, "rightback_drive");
+        leftbackDrive = hwMap.get(DcMotor.class, "leftback_drive");
 
-        armServo = hwMap.get(Servo.class,"arm");
->>>>>>> cb3c32869b3086342681d978e03153eca67c0dac
+        liftDrive = hwMap.get(DcMotor.class, "lift_drive");
+        leftArm = hwMap.get(DcMotor.class, "left_arm");
+
+
+        armServo = hwMap.get(Servo.class, "arm");
 
         leftfrontDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightfrontDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
@@ -81,11 +78,8 @@ public class Robot
         rightfrontDrive.setPower(0);
         leftbackDrive.setPower(0);
         rightbackDrive.setPower(0);
-<<<<<<< HEAD
         liftDrive.setPower(0);
         leftArm.setPower(0);
-=======
->>>>>>> cb3c32869b3086342681d978e03153eca67c0dac
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
@@ -93,7 +87,6 @@ public class Robot
         rightfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-<<<<<<< HEAD
         liftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
@@ -102,12 +95,10 @@ public class Robot
         //rightClaw = hwMap.get(Servo.class, "right_hand");
         //leftClaw.setPosition(MID_SERVO);
         //rightClaw.setPosition(MID_SERVO);
-=======
 
         // Define and initialize ALL installed servos.
-        armServo  = hwMap.get(Servo.class, "arm");
+        armServo = hwMap.get(Servo.class, "arm");
         armServo.setPosition(0);
->>>>>>> cb3c32869b3086342681d978e03153eca67c0dac
     }
 
     void move_straight(int speed) {
