@@ -47,8 +47,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Team A Left Autonomous", group="Robot")
-public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
+@Autonomous(name="Team A Turn Tests", group="Robot")
+public class TeamA_Tests extends LinearOpMode {
 
     RobotTeamA robot = new RobotTeamA();
 
@@ -66,31 +66,9 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-           runtime.reset();
-        while (runtime.seconds() < 0.4) {
-            robot.move_straight(0.5);
+        while (runtime.seconds() < 0.85) {
+            robot.turnRight(-0.5);
         }
-        runtime.reset();
-        while (runtime.seconds() < 0.7) {
-            robot.turnRight(0.6);
-        }
-
-        runtime.reset();
-        while (runtime.seconds() < 1.3) {
-            robot.move_straight(1);
-        }
-
-        runtime.reset();
-        while (runtime.seconds() < 0.6) {
-            robot.turnRight(0.5);
-        }
-
-        runtime.reset();
-        while (runtime.seconds() < 2.3) {
-            robot.move_straight(0.5);
-        }
-
-        runtime.reset();
 
         /* while(runtime.seconds() < 5) {
         robot.turnRight(1);

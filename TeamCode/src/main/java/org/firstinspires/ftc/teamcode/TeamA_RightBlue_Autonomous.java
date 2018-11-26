@@ -54,6 +54,9 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class TeamA_RightBlue_Autonomous extends LinearOpMode {
 
     RobotTeamA robot = new RobotTeamA();
+    double rightTurnTime = 0.5;
+    double rightTurnSpeed = 0.6;
+
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -67,7 +70,6 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
-        runtime.reset();
 
         runtime.reset();
         while (runtime.seconds() < 0.4) {
@@ -75,18 +77,52 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
         }
 
         runtime.reset();
-        while (runtime.seconds() < 0.5) {
-            robot.turnRight(0.4);
+        while (runtime.seconds() < 0.7) {
+            robot.turnRight(0.6);
         }
 
         runtime.reset();
+        while (runtime.seconds() < 1.2) {
+            robot.move_straight(0.5);
+        }
+        runtime.reset();
         while (runtime.seconds() < 0.7) {
+            robot.turnLeft(0.6);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 0.3) {
+            robot.move_straight(1);
+        }
+
+        while (runtime.seconds() < 0.3) {
+            robot.turnLeft(0.4);
+        }
+        runtime.reset();
+        while (runtime.seconds() < 0.8) {
+            robot.move_straight(1);
+        }
+        runtime.reset();
+        while (runtime.seconds() < 0.3) {
+            robot.turnLeft(0.3);
+        }
+      /*  while (runtime.seconds() < 0.4) {
+            robot.move_straight(0.5);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 0.5) {
+            robot.turnLeft(0.6);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 0.5) {
             robot.move_straight(1);
         }
 
         runtime.reset();
-        while (runtime.seconds() < 1) {
-            robot.turnLeft(0.4);
+        while (runtime.seconds() < 0.5) {
+            robot.turnLeft(0.6);
         }
 
         runtime.reset();
@@ -94,7 +130,7 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
             robot.move_straight(0.5);
         }
 
-        runtime.reset();
+        runtime.reset(); */
 
         /* while(runtime.seconds() < 5) {
         robot.turnRight(1);

@@ -128,6 +128,22 @@ public class RobotTeamA
             rightbackDrive.setPower(direction * speed * -1);
             leftbackDrive.setPower(direction * speed);
         }
+
+    }
+    void turnNinetyRight(ElapsedTime runtime) {
+        runtime.reset();
+        while (runtime.seconds() < 0.85) {
+            turnRight(0.5);
+        }
+
+    }
+
+    void turnNinetyLeft(ElapsedTime runtime) {
+        runtime.reset();
+        while (runtime.seconds() < 0.85) {
+            turnRight(-0.5);
+        }
+
     }
 
 
