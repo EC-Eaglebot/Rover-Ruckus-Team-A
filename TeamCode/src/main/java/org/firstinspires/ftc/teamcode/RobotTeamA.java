@@ -20,10 +20,16 @@ public class RobotTeamA
     public DcMotor  rightfrontDrive  = null;
     public DcMotor  leftbackDrive = null;
     public DcMotor  rightbackDrive = null;
+<<<<<<< HEAD
     public DcMotor  lift = null;
+=======
+    public DcMotor liftDrive = null;
+>>>>>>> fd76bed86f558003a670b564896b1f99eba696d7
     // The "Servo" Data Types are for the "arm" mechanisms.
   //  public Servo    leftClaw    = null;
    // public Servo    rightClaw   = null;
+
+    public Servo    armServo     = null;
 
     // These are some crazy lines of code coming up. Here's what the following things are:
     // public -> this is a modifier. "public" means that anyone can see it.
@@ -65,8 +71,15 @@ public class RobotTeamA
         rightfrontDrive = hwMap.get(DcMotor.class,"rightfront_drive");
         rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
         leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
+<<<<<<< HEAD
         lift = hwMap.get(DcMotor.class, "lift");
       //  arm = hwMap.get(DcMotor.class,"arm");
+=======
+        liftDrive = hwMap.get(DcMotor.class, "lift_drive");
+        armServo = hwMap.get(Servo.class, "arm");
+
+        //  arm = hwMap.get(DcMotor.class,"arm");
+>>>>>>> fd76bed86f558003a670b564896b1f99eba696d7
 
        leftfrontDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightfrontDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
@@ -76,19 +89,19 @@ public class RobotTeamA
         // Set all motors to zero power
         leftfrontDrive.setPower(0);
         rightfrontDrive.setPower(0);
-       // leftArm.setPower(0);
+        leftbackDrive.setPower(0);
+        rightbackDrive.setPower(0);
+        liftDrive.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-     /*   leftArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        leftbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rightbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        liftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        leftClaw  = hwMap.get(Servo.class, "left_hand");
-        rightClaw = hwMap.get(Servo.class, "right_hand");
-        leftClaw.setPosition(MID_SERVO);
-        rightClaw.setPosition(MID_SERVO); */
     }
 
     void move_straight(double speed) {
