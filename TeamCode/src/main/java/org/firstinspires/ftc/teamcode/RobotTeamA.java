@@ -20,11 +20,11 @@ public class RobotTeamA
     public DcMotor  rightfrontDrive  = null;
     public DcMotor  leftbackDrive = null;
     public DcMotor  rightbackDrive = null;
-<<<<<<< HEAD
+
     public DcMotor  lift = null;
-=======
+
     public DcMotor liftDrive = null;
->>>>>>> fd76bed86f558003a670b564896b1f99eba696d7
+
     // The "Servo" Data Types are for the "arm" mechanisms.
   //  public Servo    leftClaw    = null;
    // public Servo    rightClaw   = null;
@@ -71,15 +71,15 @@ public class RobotTeamA
         rightfrontDrive = hwMap.get(DcMotor.class,"rightfront_drive");
         rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
         leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
-<<<<<<< HEAD
+
         lift = hwMap.get(DcMotor.class, "lift");
       //  arm = hwMap.get(DcMotor.class,"arm");
-=======
+
         liftDrive = hwMap.get(DcMotor.class, "lift_drive");
         armServo = hwMap.get(Servo.class, "arm");
 
         //  arm = hwMap.get(DcMotor.class,"arm");
->>>>>>> fd76bed86f558003a670b564896b1f99eba696d7
+
 
        leftfrontDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightfrontDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
