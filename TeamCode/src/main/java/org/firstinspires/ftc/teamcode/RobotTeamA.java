@@ -11,11 +11,16 @@ public class RobotTeamA
     // Declaring the motors! This is where we name the motors and initialize them to be "null",
     // which is to make sure that they contain NOTHING before we work with them.
     // The "DcMotor" Data Types are for the wheels.
+    /* 0 - rightback_drive
+    leftback_drive
+    leftfront_drive
+    3- rightfront_drive
+    */
     public DcMotor  leftfrontDrive   = null;
     public DcMotor  rightfrontDrive  = null;
     public DcMotor  leftbackDrive = null;
     public DcMotor  rightbackDrive = null;
-    public DcMotor  arm     = null;
+    public DcMotor  lift = null;
     // The "Servo" Data Types are for the "arm" mechanisms.
   //  public Servo    leftClaw    = null;
    // public Servo    rightClaw   = null;
@@ -60,12 +65,14 @@ public class RobotTeamA
         rightfrontDrive = hwMap.get(DcMotor.class,"rightfront_drive");
         rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
         leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
+        lift = hwMap.get(DcMotor.class, "lift");
       //  arm = hwMap.get(DcMotor.class,"arm");
 
        leftfrontDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightfrontDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
         leftbackDrive.setDirection(DcMotor.Direction.FORWARD);
         rightbackDrive.setDirection(DcMotor.Direction.REVERSE);
+        lift.setDirection(DcMotor.Direction.FORWARD);
         // Set all motors to zero power
         leftfrontDrive.setPower(0);
         rightfrontDrive.setPower(0);

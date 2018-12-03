@@ -95,7 +95,11 @@ public class Robot_OpMode_Teleop extends OpMode {
             robot.rightfrontDrive.setPower(right);
             robot.rightbackDrive.setPower(right);
         }
+        if (gamepad1.a) { robot.lift.setPower(robot.lift.getPower() + 0.1); }
+        else if (gamepad1.b) {robot.lift.setPower(robot.lift.getPower() - 0.1);}
+
     }
+
 
     /*
      * Code to run ONCE after the driver hits STOP
