@@ -54,6 +54,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
+
     @Override
     public void runOpMode() {
         telemetry.addData("Status", "Initialized");
@@ -65,8 +66,50 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
         runtime.reset();
+        //drop from lander
+            while (runtime.seconds() < 2.3) {
+              robot.lift.setPower(robot.lift.getPower() + 0.1);
+           }
 
-           runtime.reset();
+
+        runtime.reset();
+        while (runtime.seconds() < 0.7) {
+            robot.strafeLeft(0.3);
+        }
+
+     /*   runtime.reset();
+          while (runtime.seconds() < 0.7) {
+            robot.move_straight(0.5);
+        }
+
+        runtime.reset();
+        robot.turnNinetyRight(runtime);
+
+        runtime.reset();
+        while (runtime.seconds() < 2) {
+            robot.move_straight(0.5);
+        }
+
+
+
+        runtime.reset();
+
+        robot.turnNinetyLeft(runtime);
+
+
+        runtime.reset();
+        while (runtime.seconds() < 1.6) {
+            robot.move_straight(0.3);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 0.5) {
+            robot.dropSymbol();
+        }
+*/
+
+        //--corner move code that works--
+        runtime.reset();
         while (runtime.seconds() < 0.4) {
             robot.move_straight(0.5);
         }
@@ -82,6 +125,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
         runtime.reset();
         while (runtime.seconds() < 0.6) {
+
             robot.turnRight(0.5);
         }
 
@@ -91,6 +135,11 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
         }
 
         runtime.reset();
+    }
+}
+
+       // --end of corner move code --
+
 
         /* while(runtime.seconds() < 5) {
         robot.turnRight(1);
@@ -121,9 +170,14 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
         while (runtime.seconds() < 1.5) {
             robot.move_straight(1);
             }
+            */
 
-         */
-    }
-}
+
+
+
+
+
+
+
 
 

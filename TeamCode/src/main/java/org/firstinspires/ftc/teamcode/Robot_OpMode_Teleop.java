@@ -96,7 +96,17 @@ public class Robot_OpMode_Teleop extends OpMode {
             robot.rightbackDrive.setPower(right);
         }
         if (gamepad1.a) { robot.lift.setPower(robot.lift.getPower() + 0.1); }
+
         else if (gamepad1.b) {robot.lift.setPower(robot.lift.getPower() - 0.1);}
+
+     /*\\   if (gamepad1.x) {
+            robot.leftarm_servo.setPosition(0);
+            robot.rightarm_servo.setPosition(1);
+        }
+        else if (gamepad1.y) {
+            robot.rightarm_servo.setPosition(0);
+            robot.leftarm_servo.setPosition(1);
+        } */
 
     }
 

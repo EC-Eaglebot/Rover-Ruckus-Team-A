@@ -22,8 +22,9 @@ public class RobotTeamA
     public DcMotor  rightbackDrive = null;
 
     public DcMotor  lift = null;
-
-    public DcMotor liftDrive = null;
+    public Servo leftarm_servo = null;
+    public Servo rightarm_servo = null;
+    public Servo symbolServo = null;
 
     // The "Servo" Data Types are for the "arm" mechanisms.
   //  public Servo    leftClaw    = null;
@@ -71,12 +72,15 @@ public class RobotTeamA
         rightfrontDrive = hwMap.get(DcMotor.class,"rightfront_drive");
         rightbackDrive = hwMap.get(DcMotor.class,"rightback_drive");
         leftbackDrive = hwMap.get(DcMotor.class,"leftback_drive");
-
+        symbolServo = hwMap.get(Servo.class, "symbol_servo");
+       // leftarm_servo = hwMap.get(Servo.class, "leftarm_servo");
+       // rightarm_servo = hwMap.get(Servo.class, "rightarm_servo");
         lift = hwMap.get(DcMotor.class, "lift");
+
       //  arm = hwMap.get(DcMotor.class,"arm");
 
-        liftDrive = hwMap.get(DcMotor.class, "lift_drive");
-        armServo = hwMap.get(Servo.class, "arm");
+    //    liftDrive = hwMap.get(DcMotor.class, "lift_drive");
+    //    armServo = hwMap.get(Servo.class, "arm");
 
         //  arm = hwMap.get(DcMotor.class,"arm");
 
@@ -86,12 +90,21 @@ public class RobotTeamA
         leftbackDrive.setDirection(DcMotor.Direction.FORWARD);
         rightbackDrive.setDirection(DcMotor.Direction.REVERSE);
         lift.setDirection(DcMotor.Direction.FORWARD);
+       // leftarm_servo.setDirection(Servo.Direction.FORWARD);
+       // rightarm_servo.setDirection(Servo.Direction.FORWARD);
+        symbolServo.setDirection(Servo.Direction.FORWARD);
+
+
         // Set all motors to zero power
         leftfrontDrive.setPower(0);
         rightfrontDrive.setPower(0);
         leftbackDrive.setPower(0);
         rightbackDrive.setPower(0);
-        liftDrive.setPower(0);
+        //lift.setPower(0);
+       // leftarm_servo.setPosition(0);
+       // rightarm_servo.setPosition(0);
+        symbolServo.setPosition(1);
+
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
@@ -99,7 +112,7 @@ public class RobotTeamA
         rightfrontDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightbackDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        liftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
 
         // Define and initialize ALL installed servos.
     }
@@ -164,6 +177,9 @@ public class RobotTeamA
             turnRight(-0.5);
         }
 
+    }
+    void dropSymbol () {
+        symbolServo.setPosition(0);
     }
 
 
