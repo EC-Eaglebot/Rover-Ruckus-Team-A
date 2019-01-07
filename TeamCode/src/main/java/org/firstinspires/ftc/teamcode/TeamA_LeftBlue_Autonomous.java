@@ -67,11 +67,12 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-        while (runtime.seconds() < 8)
+       /* while (runtime.seconds() < 8)
         {
             // delay added so Team B can do their thing first
-        }
+        } */
 
+        // new code for new hardware configuration
         //drop from lander
         runtime.reset();
         while (runtime.seconds() < 3.0) {
@@ -80,12 +81,48 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
         robot.lift.setPower(0);
 
-
+        runtime.reset();
+        while (runtime.seconds() < 0.6) {
+            robot.move_straight(-0.3);
+        }
 
         runtime.reset();
+        while (runtime.seconds() < 2.5) {
+            robot.strafeLeft(0.5);
+        }
+
+        runtime.reset();
+        while (runtime.seconds() < 2) {
+            robot.move_straight(-0.5);
+        }
+
+   /*     runtime.reset();
+        robot.turnNinetyLeft(runtime);
+
+        runtime.reset();
+        robot.wait(runtime, 1);
+
+        runtime.reset();
+        robot.turnNinetyLeft(runtime);
+
+        runtime.reset();
+        while (runtime.seconds() < 0.5) {
+        robot.turnLeft(0.3); } */
+
+        runtime.reset();
+        while (runtime.seconds() < 0.8) {
+            robot.turnRight(0.3); }
+
+        runtime.reset();
+        while (runtime.seconds() < 3.4) {
+            robot.move_straight(0.3);
+        }
+
+
+        /* runtime.reset();
         while (runtime.seconds() < 0.7) {
             robot.strafeLeft(0.3);
-        }
+        } */
 
      /*   runtime.reset();
           while (runtime.seconds() < 0.7) {
@@ -119,7 +156,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 */
 
         //--corner move code that works--
-        runtime.reset();
+     /*   runtime.reset();
         while (runtime.seconds() < 0.4) {
             robot.move_straight(0.5);
         }
@@ -150,7 +187,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
        // --end of corner move code --
 
-
+*/
         /* while(runtime.seconds() < 5) {
         robot.turnRight(1);
     } */
@@ -183,11 +220,5 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
             */
 
 
-
-
-
-
-
-
-
-
+    }
+}

@@ -186,4 +186,8 @@ public class RobotTeamA
     void stop(){
         move_straight(0);
     }
+
+    void wait(ElapsedTime runtime, double seconds) {
+        while (runtime.seconds() < seconds) { stop(); }
+    }
 }
