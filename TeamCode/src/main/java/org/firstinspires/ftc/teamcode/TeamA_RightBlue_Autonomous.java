@@ -70,6 +70,26 @@ public class TeamA_RightBlue_Autonomous extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+        runtime.reset();
+
+        while (runtime.seconds() < 8)
+        {
+            // delay added so Team B can do their thing first
+        }
+
+        //drop from lander
+        runtime.reset();
+        while (runtime.seconds() < 3.2) {
+            robot.lift.setPower(1);
+        }
+
+        robot.lift.setPower(0);
+
+
+        runtime.reset();
+        while (runtime.seconds() < 0.7) {
+            robot.strafeLeft(0.3);
+        }
 
         runtime.reset();
         while (runtime.seconds() < 0.4) {

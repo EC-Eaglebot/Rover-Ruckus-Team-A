@@ -47,8 +47,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Team A Left Autonomous", group="Robot")
-public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
+@Autonomous(name="Team A Bull Rush", group="Robot")
+public class TeamA_BullRush_Autonomous extends LinearOpMode {
 
     RobotTeamA robot = new RobotTeamA();
 
@@ -74,7 +74,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
         //drop from lander
         runtime.reset();
-        while (runtime.seconds() < 3.0) {
+        while (runtime.seconds() < 3.2) {
             robot.lift.setPower(1);
         }
 
@@ -120,27 +120,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
 
         //--corner move code that works--
         runtime.reset();
-        while (runtime.seconds() < 0.4) {
-            robot.move_straight(0.5);
-        }
-        runtime.reset();
-        while (runtime.seconds() < 0.7) {
-            robot.turnLeft(0.6);
-        }
-
-        runtime.reset();
-        while (runtime.seconds() < 1.3) {
-            robot.move_straight(1);
-        }
-
-        runtime.reset();
-        while (runtime.seconds() < 0.6) {
-
-            robot.turnLeft(0.5);
-        }
-
-        runtime.reset();
-        while (runtime.seconds() < 2.3) {
+        while (runtime.seconds() < 7) {
             robot.move_straight(0.5);
         }
 
@@ -148,7 +128,7 @@ public class TeamA_LeftBlue_Autonomous extends LinearOpMode {
     }
 }
 
-       // --end of corner move code --
+// --end of corner move code --
 
 
         /* while(runtime.seconds() < 5) {
